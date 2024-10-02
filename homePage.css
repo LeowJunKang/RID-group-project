@@ -1,0 +1,79 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-image: url('workplaces.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+header {
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.message {
+    width: 400px;
+    font-size: 18px;
+    line-height: 1.5;
+    padding: 1px;
+    margin: 20px auto;
+    background-color: #cbcbcc;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+
+main {
+    padding: 20px;
+    margin-left: 0;
+    flex-grow: 1;  
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.sidebar a:hover {
+    background-color: #575757;
+}
+
+.spacer {
+    height: 25px;
+}
+
+main, footer, header {
+    margin-left: 200px;
+}
