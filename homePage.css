@@ -5,28 +5,30 @@
     box-sizing: border-box;
 }
 
+/* Uncomment if you want background image in body */
 body {
-    /* font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    margin: 0; */
+    margin: 0;
     background-image: url('photo/background-homepage.jpg');
-    /* background-size: cover;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    text-align: center; */
-}
-
-h1 {
-    font-size: 40px;
-    color : white;
+    text-align: center;
 }
 
 header {
     color: black;
     padding: 20px;
     text-align: center;
+}
+
+main {
+    padding: 20px;
+    margin-top: 80px; /* Adjust this to create space below the sidebar */
+    flex-grow: 1;
 }
 
 .message {
@@ -44,31 +46,28 @@ header {
 .title {
     font-size: 40px;
     color : white;
-    margin-left: 5%;
-    margin-top: 10%;
-}
-
-main {
-    padding: 20px;
-    margin-left: 0;
-    flex-grow: 1;  
+    margin-left: auto;
 }
 
 .sidebar {
-    position: fixed;
+    position: fixed; /* Stick the sidebar to the top */
     top: 0;
     left: 0;
-    width: 200px;
-    height: 100%;
+    width: 100%; /* Make the sidebar span across the top */
+    height: 80px; /* Height for the top bar */
     background-color: #333;
-    padding-top: 20px;
+    display: flex;
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center;
+    padding: 0 20px; /* Add padding for space on the sides */
+    z-index: 1000; /* Ensure it stays on top of other content */
 }
 
+/* Sidebar links aligned horizontally on the right */
 .sidebar a {
-    display: block;
-    padding: 15px;
     color: white;
     text-decoration: none;
+    padding: 15px 20px;
     text-align: center;
 }
 
@@ -76,12 +75,17 @@ main {
     background-color: #575757;
 }
 
-.spacer {
-    height: 25px;
+/* Align the logo to the left side */
+.sidebar-logo {
+    height: 80px; /* Set the height of the logo */
+    width: 140px;  /* Keep the image proportions */
+    margin-right: auto; /* Move links to the right */
+    margin-left: 0%;
 }
 
+/* Remove left margin for main content */
 main, footer, header {
-    margin-left: 200px;
+    margin-left: 0;
 }
 
 .right-button {
