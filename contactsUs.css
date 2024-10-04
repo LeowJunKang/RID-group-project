@@ -32,8 +32,10 @@
 body {
     margin-left: 220px;
     background-image: url('photo/contact-background.jpg');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 100vh;
 }
 
