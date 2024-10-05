@@ -30,7 +30,7 @@ main {
     left: 0;
     width: 100%; /* Make the sidebar span across the top */
     height: 80px; /* Height for the top bar */
-    background-color: #333;
+    background-color: black;
     display: flex;
     justify-content: space-between; /* Space between logo and links */
     align-items: center;
