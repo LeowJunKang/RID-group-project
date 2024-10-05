@@ -195,6 +195,10 @@ button:hover {
     color: white;
     border-radius: 50%;
 }
+
+.sidebar a.active {
+    color: #ffcc00; /* Change to your desired color for the active link */
+}
 /*
 @media (max-width: 768px) {
     .sidebar {
