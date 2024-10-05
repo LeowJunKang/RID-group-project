@@ -40,13 +40,14 @@ main {
     /* background-color: #cbcbcc;
     border: 1px solid #ddd; */
     /* border-radius: 15px; */
-    color : white
+    color : white;
+    text-align : left;
 }
 
 .title {
     font-size: 40px;
     color : white;
-    margin-left: auto;
+    margin-right: 75%;
 }
 
 .sidebar {
@@ -55,7 +56,7 @@ main {
     left: 0;
     width: 100%; /* Make the sidebar span across the top */
     height: 80px; /* Height for the top bar */
-    background-color: #333;
+    background-color:black;
     display: flex;
     justify-content: space-between; /* Space between logo and links */
     align-items: center;
@@ -97,4 +98,8 @@ main, footer, header {
     color: white;
     border-radius: 5px;
     text-align: right;
+}
+
+.sidebar a.active {
+    color: #ffcc00; /* Change to your desired color for the active link */
 }
