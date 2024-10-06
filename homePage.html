@@ -16,27 +16,101 @@
             <a href="contactsUs.html">Contact</a>
         </nav>
     </header>
-    <main>
+    <main id="mainContent">
         <div class = "title">Introduction</div>
         <div class="message">
             <div>
-                Our team composed of passionate and skilled professionals from the field of Computer Science, 
-                is dedicated to developing innovative websites and software solutions. 
-                With a shared vision for excellence and a deep understanding of technology, 
-                we strive to create efficient, user-friendly, 
-                and scalable applications that meet the evolving needs of businesses and individuals.
+                Our team, composed of passionate and skilled professionals in the field of Computer Science, 
+                specializes in delivering innovative software and web solutions tailored to your needs. 
+                From custom software development that optimizes business operations to website design and development that enhances your online presence, 
+                we ensure that our solutions are efficient and user-friendly. We also excel in mobile app development, 
+                creating high-performance applications for Android and iOS, 
+                and offer cloud solutions and integration to help businesses scale and streamline their IT infrastructure. 
+                With a deep understanding of technology, we strive to meet the evolving demands of both businesses and individuals.
+
             </div>
-            <a href="aboutUs.html" class="right-button">Learn More</a> 
+            <a href="#" class="right-button" id="learnMoreButton">Learn More</a>    
         </div>       
     </main>
-    <script>
-        const currentPage = window.location.pathname.split('/').pop();
-        const links = document.querySelectorAll('.sidebar a');
-        links.forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('active');
+<script>
+    function showLearnMorePage() {
+        const mainContent = document.getElementById("mainContent");
+
+        mainContent.innerHTML = '';
+        const newTitle = document.createElement("h1");
+        newTitle.textContent = "Why choose our team?";
+        newTitle.classList.add("text");
+
+        const newDescription = document.createElement("p");
+        newDescription.textContent = "Our team for custom software solutions that streamline your operations, responsive website designs that boost your online presence, mobile apps that meet your business needs, and scalable cloud solutions that optimize your IT infrastructure.";
+        newDescription.classList.add("description");
+
+        mainContent.appendChild(newTitle);
+        mainContent.appendChild(newDescription);
+
+        const servicesGrid = document.createElement("div");
+        servicesGrid.classList.add("services-grid");
+
+        const services = [
+            {
+                title: "Custom Software Development",
+                text: "We build customized software solutions that are designed to optimize your business processes and improve efficiency.",
+                image: "photo/homepage-software.jpg"
+            },
+            {
+                title: "Website Design and Development",
+                text: "Our team creates visually appealing, responsive, and user-friendly websites that enhance your online presence.",
+                image: "photo/homepage-web.jpg"
+            },
+            {
+                title: "Mobile App Development",
+                text: "We develop high-performance mobile applications for Android and iOS platforms to meet your business and customer needs.",
+                image: "photo/homepage-mobile.png"
+            },
+            {
+                title: "Cloud Solutions and Integration",
+                text: "We provide scalable cloud solutions and seamless integrations to improve your IT infrastructure and reduce costs.",
+                image: "photo/homepage-cloud.jpg"
             }
+        ];
+
+        services.forEach(service => {
+            const serviceItem = document.createElement("div");
+            serviceItem.classList.add("service-item");
+
+            const serviceTitle = document.createElement("h2");
+            serviceTitle.classList.add("service-title");
+            serviceTitle.textContent = service.title;
+            serviceItem.appendChild(serviceTitle);
+
+            const serviceText = document.createElement("p");
+            serviceText.classList.add("service-text");
+            serviceText.textContent = service.text;
+            serviceItem.appendChild(serviceText);
+
+            const serviceImage = document.createElement("img");
+            serviceImage.src = service.image;
+            serviceImage.alt = "Service Image";
+            serviceItem.appendChild(serviceImage);
+
+            servicesGrid.appendChild(serviceItem);
         });
-    </script>
+
+        mainContent.appendChild(servicesGrid);
+    }
+
+    document.getElementById("learnMoreButton").addEventListener("click", function(event) {
+        event.preventDefault();
+        showLearnMorePage();
+    });
+
+    const currentPage = window.location.pathname.split('/').pop();
+    const links = document.querySelectorAll('.sidebar a');
+    links.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+</script>  
 </body>
 </html>
