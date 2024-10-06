@@ -7,6 +7,67 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@400;500&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="contactsUs.css">
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAi9neqoH67SXQ2JRxkVY_bl9xGCoHeYUI",
+            authDomain: "rad-tjw.firebaseapp.com",
+            projectId: "rad-tjw",
+            storageBucket: "rad-tjw.appspot.com",
+            messagingSenderId: "574586917129",
+            appId: "1:574586917129:web:a6242e4bc8621a6bcf83d8",
+            measurementId: "G-QW1W8CBYVT"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.getElementById('contactForm');
+            const alertBox = document.getElementById('customAlert');
+
+            contactForm.addEventListener('submit', async function (event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                try {
+                    // throw new Error("Simulated Error"); // Testing Purpose
+                    await addDoc(collection(db, "contacts"), {
+                        name: name,
+                        email: email,
+                        message: message,
+                        timestamp: serverTimestamp()
+                    });
+
+                    alertBox.textContent = "Message Sent!";
+                    alertBox.className = "success";
+                    alertBox.style.display = 'block';
+
+                    setTimeout(() => {
+                        alertBox.style.display = 'none';
+                    }, 3000);
+
+                    contactForm.reset();
+                } catch (e) {
+                    console.error("Error adding document: ", e);
+
+                    alertBox.textContent = "Message cannot be sent!";
+                    alertBox.className = "error";
+                    alertBox.style.display = 'block';
+
+                    setTimeout(() => {
+                        alertBox.style.display = 'none';
+                    }, 3000);
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -19,41 +80,64 @@
         </nav>
     </header>
     <main>
-        <h1>Contact Me</h1>
+        <h1>Contact Us</h1>
         <h2>————xx————</h2>
-        <p>I'll be glad to answer your questions!</p>
+        <p>We'll be glad to answer your questions!</p>
 
-        <form action="submit_form.php" method="post">
-            <label for="name">Name:</label>
+        <div id="customAlert">Message Sent!</div>
+
+        <form id="contactForm">
+            <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-            <label for="email">Email:</label>
+            <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-            <label for="message">Message:</label>
+            <label for="message">Message</label>
             <textarea id="message" name="message" placeholder="Your message" required></textarea>
 
             <button type="submit">Send Message</button>
         </form>
 
         <div class="social-media">
-            <h3>I am Social</h3>
+            <h3>Social Social !!</h3>
             <div class="social-icons">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-instagram"></a>
-                <a href="#" class="fa fa-linkedin"></a>
-                <a href="#" class="fa fa-google"></a>
+                <a href="https://www.facebook.com/profile.php?id=61566869039472" class="fa fa-facebook" target="_blank" alt="Facebook"></a>
+                <a href="https://instagram.com/procode547" class="fa fa-instagram" target="_blank" alt="Instagram"></a>
+                <a href="https://linkedin.com/in/pro-code-943445331" class="fa fa-linkedin" target="_blank" alt="LinkedIn"></a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=procode547@gmail.com" class="fa fa-google" target="_blank" alt="Email Me"></a>
             </div>
         </div>
     </main>
+
+    <a href="#" id="scrollToTop">
+        <img src="/photo/top.png" alt="Scroll to Top" class="scroll-to-top">
+    </a>
+
     <script>
-        // Get the current page URL
+        window.onscroll = function() {
+            const scrollToTopBtn = document.getElementById("scrollToTop");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        document.getElementById("scrollToTop").onclick = function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        };
+    </script>
+
+    <script>
         const currentPage = window.location.pathname.split('/').pop();
 
-        // Get all sidebar links
         const links = document.querySelectorAll('.sidebar a');
 
-        // Loop through links and add 'active' class to the current page link
         links.forEach(link => {
             if (link.getAttribute('href') === currentPage) {
                 link.classList.add('active');
