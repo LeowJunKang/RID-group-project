@@ -30,7 +30,7 @@ main {
     left: 0;
     width: 100%; /* Make the sidebar span across the top */
     height: 80px; /* Height for the top bar */
-    background-color: #333;
+    background-color: black;
     display: flex;
     justify-content: space-between; /* Space between logo and links */
     align-items: center;
@@ -56,4 +56,8 @@ main {
     width: 140px;  /* Keep the image proportions */
     margin-right: auto; /* Move links to the right */
     margin-left: 0%;
+}
+
+.sidebar a.active {
+    color: #ffcc00; /* Change to your desired color for the active link */
 }

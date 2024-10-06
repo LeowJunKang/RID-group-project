@@ -10,7 +10,7 @@
     <header>
         <nav class="sidebar">
             <img src="photo/procode.jpg" alt="Logo" class="sidebar-logo">
-            <a href="homePage.html">Home</a>
+            <a href="homePage.html" >Home</a>
             <a href="aboutUs.html">About Us</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="contactsUs.html">Contact</a>
@@ -29,5 +29,14 @@
             <a href="aboutUs.html" class="right-button">Learn More</a> 
         </div>       
     </main>
+    <script>
+        const currentPage = window.location.pathname.split('/').pop();
+        const links = document.querySelectorAll('.sidebar a');
+        links.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>

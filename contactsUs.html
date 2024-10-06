@@ -132,5 +132,17 @@
             });
         };
     </script>
+
+    <script>
+        const currentPage = window.location.pathname.split('/').pop();
+
+        const links = document.querySelectorAll('.sidebar a');
+
+        links.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    </script>
 </body>
 </html>
