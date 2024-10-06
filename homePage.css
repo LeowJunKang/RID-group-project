@@ -1,18 +1,16 @@
-/* General reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Uncomment if you want background image in body */
 body {
     font-family: Arial, sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-image: url('photo/background-homepage.jpg');
+    background-image: url('photo/homepage-background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -27,7 +25,7 @@ header {
 
 main {
     padding: 20px;
-    margin-top: 80px; /* Adjust this to create space below the sidebar */
+    margin-top: 80px;
     flex-grow: 1;
 }
 
@@ -37,9 +35,6 @@ main {
     line-height: 1.5;
     margin-left: 5%;
     margin-top: 50px;
-    /* background-color: #cbcbcc;
-    border: 1px solid #ddd; */
-    /* border-radius: 15px; */
     color : white;
     text-align : left;
 }
@@ -51,20 +46,19 @@ main {
 }
 
 .sidebar {
-    position: fixed; /* Stick the sidebar to the top */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Make the sidebar span across the top */
-    height: 80px; /* Height for the top bar */
+    width: 100%;
+    height: 80px;
     background-color:black;
     display: flex;
-    justify-content: space-between; /* Space between logo and links */
+    justify-content: space-between;
     align-items: center;
-    padding: 0 20px; /* Add padding for space on the sides */
-    z-index: 1000; /* Ensure it stays on top of other content */
+    padding: 0 20px;
+    z-index: 1000;
 }
 
-/* Sidebar links aligned horizontally on the right */
 .sidebar a {
     color: white;
     text-decoration: none;
@@ -76,23 +70,21 @@ main {
     background-color: #575757;
 }
 
-/* Align the logo to the left side */
 .sidebar-logo {
-    height: 80px; /* Set the height of the logo */
-    width: 140px;  /* Keep the image proportions */
-    margin-right: auto; /* Move links to the right */
+    height: 80px;
+    width: 140px; 
+    margin-right: auto;
     margin-left: 0%;
 }
 
-/* Remove left margin for main content */
 main, footer, header {
     margin-left: 0;
 }
 
 .right-button {
     display: inline-block;;
-    margin-top: 30px;
-    margin-left: 83%;
+    margin-top: 5%;
+    margin-left: 88%;
     padding: 10px 20px;
     background-color: #5531cb;
     color: white;
@@ -101,5 +93,56 @@ main, footer, header {
 }
 
 .sidebar a.active {
-    color: #ffcc00; /* Change to your desired color for the active link */
+    color: #ffcc00;
+}
+
+.text {
+    color: white;
+}
+
+.description {
+    margin-top: 30px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+
+.service-item {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.service-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.service-text {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.service-item img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
 }
