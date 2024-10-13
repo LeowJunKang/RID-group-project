@@ -10,10 +10,6 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    /* background-image: url('photo/contact-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; */
     text-align: center;
 }
 
@@ -104,7 +100,7 @@ main {
 h1 {
     text-align: center;
     font-size: 6rem;
-    /* color: #f5f5f5; */
+    font-weight: 800;
     font-family: 'Bebas Neue', sans-serif;
     text-decoration: none;
     margin-bottom: 0;
@@ -118,7 +114,7 @@ h2 {
     text-align: center;
     margin-bottom: 2%;
     font-size: 1.5rem;
-    /* color: #f5f5f5; */
+    font-weight: 800;
     font-family: 'Bebas Neue', sans-serif;
     text-decoration: none;
     margin: 0 auto;
@@ -132,7 +128,7 @@ p {
     text-align: center;
     margin-bottom: 2%;
     font-size: 1.2rem;
-    color: #f5f5f5;
+    font-weight: 800;
     font-family: 'Raleway', sans-serif;
     user-select: none;
     background-image: linear-gradient(to right, #5c67f2, #b57fef);
@@ -145,14 +141,6 @@ form {
     flex-direction: column;
     align-items: center;
     margin: 20px 0;
-}
-
-label {
-    margin: 10px 0 5px 0;
-    font-size: 1rem;
-    color: #333;
-    font-family: 'Raleway', sans-serif;
-    width: 60%; 
 }
 
 input, textarea {
@@ -173,9 +161,6 @@ textarea {
 }
 
 ::placeholder {
-    /* background-image: linear-gradient(to right, #f25c9d, #b57fef);
-    -webkit-background-clip: text;
-    color: transparent; */
     color:#333;
 }
 
@@ -188,8 +173,9 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    font-weight: 800;
     font-family: 'Raleway', sans-serif;
-    box-shadow: 0 9px #999;
+    box-shadow: 0 9px #974ac4;
 }
 
 button:hover {
@@ -209,6 +195,7 @@ button:active {
 
 .social-media h3 {
     font-size: 1.5rem;
+    font-weight: 800;
     margin-bottom: 20px;
     color: white;
     font-family: 'Bebas Neue', sans-serif;
@@ -268,7 +255,7 @@ button:active {
     height: 10%;
     cursor: pointer;
     border-radius: 50%;
-    box-shadow: 0 9px #999;
+    box-shadow: 0 9px #974ac4;
     background-color: white;
 }
 
