@@ -1,44 +1,43 @@
+/* Reset and Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Uncomment if you want background image in body */
 body {
     font-family: Arial, sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-image: url('put your image');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    color: white; /* White text for better contrast */
     text-align: center;
+
+    /* Black Background with Gold and Red Dots */
+    background-color: black;
+    background-image: 
+        radial-gradient(circle, gold 2px, transparent 2px), 
+        radial-gradient(circle, red 2px, transparent 2px);
+    background-size: 70px 70px, 100px 100px; /* Adjust dot size and spacing */
+    background-position: 0 0, 35px 35px; /* Offset layers for better distribution */
 }
 
-main {
-    padding: 20px;
-    margin-top: 80px; /* Adjust this to create space below the sidebar */
-    flex-grow: 1;
-}
-
+/* Sidebar Navigation */
 .sidebar {
-    position: fixed; /* Stick the sidebar to the top */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Make the sidebar span across the top */
-    height: 80px; /* Height for the top bar */
-    background-color: black;
+    width: 100%;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent black */
     display: flex;
-    justify-content: space-between; /* Space between logo and links */
+    justify-content: space-between;
     align-items: center;
-    padding: 0 20px; /* Add padding for space on the sides */
-    z-index: 1000; /* Ensure it stays on top of other content */
+    padding: 0 20px;
+    z-index: 1000;
 }
 
-/* Sidebar links aligned horizontally on the right */
 .sidebar a {
     color: white;
     text-decoration: none;
@@ -50,14 +49,105 @@ main {
     background-color: #575757;
 }
 
-/* Align the logo to the left side */
 .sidebar-logo {
-    height: 80px; /* Set the height of the logo */
-    width: 140px;  /* Keep the image proportions */
-    margin-right: auto; /* Move links to the right */
-    margin-left: 0%;
+    height: 80px;
+    width: auto;
+    margin-right: auto;
 }
 
 .sidebar a.active {
-    color: #ffcc00; /* Change to your desired color for the active link */
+    color: #ffcc00; /* Yellow for the active page */
+}
+
+/* Main Content Section */
+main {
+    padding: 20px;
+    margin-top: 100px; /* Space to avoid overlap with the sidebar */
+    flex-grow: 1;
+}
+
+/* About Section */
+.about-section {
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+/* Team Members Section */
+.team-members {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-row {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Ensure cards wrap on smaller screens */
+}
+
+.member {
+    flex: 1;
+    max-width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #333; /* Dark grey background for member cards */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    text-align: center; /* Center-align text in member cards */
+}
+
+.member img {
+    width: 100%;
+    border-radius: 50%; /* Circular profile pictures */
+    margin-bottom: 15px;
+}
+
+.member h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.member p {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+/* Hover Effect for Team Members */
+.member:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+}
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .team-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar a {
+        padding: 10px;
+        margin: 5px 0;
+    }
 }
