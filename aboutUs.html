@@ -11,7 +11,7 @@
         <nav class="sidebar">
             <img src="photo/logo.png" alt="Logo" class="sidebar-logo">
             <a href="homePage.html">Home</a>
-            <a href="aboutUs.html">About Us</a>
+            <a href="aboutUs.html" class="active">About Us</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="contactsUs.html">Contact</a>
         </nav>
@@ -20,41 +20,48 @@
     <main>
         <section class="about-section">
             <h1>About Our Team</h1>
-            <p>We are Computer Science students from INTI International University, currently in our 6th semester. Throughout our studies, we have gained knowledge in various areas, including computer architecture, networking, and coding. We have experience with C++, Java, and this semester we are learning HTML and Python.</p>
+            <p>We are Computer Science students from INTI International University, currently in our 6th semester. 
+               Throughout our studies, we have gained knowledge in various areas, including computer architecture, 
+               networking, and coding. We have experience with C++, Java, and this semester we are learning HTML and Python.</p>
         </section>
 
         <section class="team-members">
             <h2>Meet Our Team</h2>
 
-            <div class="member">
-                <img src="yonghan.jpg" alt="Yong Han">
-                <h3>Yong Han</h3>
-                <p>Role: Developer</p>
-                <p>Skills: C++, Java, HTML, Python</p>
+            <div class="team-row">
+                <div class="member">
+                    <img src="photo/yonghan.jpg" alt="Yong Han">
+                    <h3>Yong Han</h3>
+                    <p>Role: Developer, IT Assistant</p>
+                    <p>Skills: C++, Java, HTML, Python</p>
+                </div>
+
+                <div class="member">
+                    <img src="photo/junkang.jpg" alt="Jun Kang">
+                    <h3>Jun Kang</h3>
+                    <p>Role: Developer, Designer</p>
+                    <p>Skills: C++, Java, HTML, Python, Photoshop, Visual Studio</p>
+                </div>
             </div>
 
-            <div class="member">
-                <img src="junkang.jpg" alt="Jun Kang">
-                <h3>Jun Kang</h3>
-                <p>Role: Developer</p>
-                <p>Skills: C++, Java, HTML, Python</p>
-            </div>
+            <div class="team-row">
+                <div class="member">
+                    <img src="photo/jovi.jpg" alt="Jovi">
+                    <h3>Jovi</h3>
+                    <p>Role: Developer, Database Management</p>
+                    <p>Skills: C++, Java, HTML, Python, SQL, Cloud Storage</p>
+                </div>
 
-            <div class="member">
-                <img src="jovi.jpg" alt="Jovi">
-                <h3>Jovi</h3>
-                <p>Role: Developer</p>
-                <p>Skills: C++, Java, HTML, Python</p>
-            </div>
-
-            <div class="member">
-                <img src="jiawei.jpg" alt="Jia Wei">
-                <h3>Jia Wei</h3>
-                <p>Role: Developer</p>
-                <p>Skills: C++, Java, HTML, Python</p>
+                <div class="member">
+                    <img src="photo/jiawei.jpg" alt="Jia Wei">
+                    <h3>Jia Wei</h3>
+                    <p>Role: Developer, IT Support</p>
+                    <p>Skills: C++, Java, HTML, Python, Software Development</p>
+                </div>
             </div>
         </section>
     </main>
+
     <script>
         // Get the current page URL
         const currentPage = window.location.pathname.split('/').pop();
