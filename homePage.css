@@ -10,11 +10,12 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-image: url('photo/homepage-background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: black; 
 }
 
 header {
@@ -29,20 +30,12 @@ main {
     flex-grow: 1;
 }
 
-.message {
-    width: 80%;
-    font-size: 18px;
-    line-height: 1.5;
-    margin-left: 5%;
-    margin-top: 50px;
-    color : white;
-    text-align : left;
+h1{
+    color: white;
 }
 
-.title {
-    font-size: 40px;
-    color : white;
-    margin-right: 75%;
+main, footer, header {
+    margin-left: 0;
 }
 
 .sidebar {
@@ -62,53 +55,78 @@ main {
 .sidebar a {
     color: white;
     text-decoration: none;
-    padding: 15px 20px;
-    text-align: center;
+    padding: 25px 20px;
+    display: inline-block;
+    height: 100%;
+    line-height: 30px;
+    transition: all 0.3s ease;
 }
 
 .sidebar a:hover {
     background-color: #575757;
 }
 
-.sidebar-logo {
-    height: 80px;
-    width: 140px; 
-    margin-right: auto;
-    margin-left: 0%;
-}
-
-main, footer, header {
-    margin-left: 0;
-}
-
-.right-button {
-    display: inline-block;;
-    margin-top: 5%;
-    margin-left: 88%;
-    padding: 10px 20px;
-    background-color: #5531cb;
-    color: white;
-    border-radius: 5px;
-    text-align: right;
+.sidebar a:focus, .sidebar a:active {
+    border-bottom: 4px solid #ffcc00;
+    background-color: #222;
+    padding-bottom: 20px;
 }
 
 .sidebar a.active {
     color: #ffcc00;
+    border-bottom: 4px solid #ffcc00;
 }
 
-.text {
-    color: white;
-}
-
-.description {
-    margin-top: 30px;
-    font-size: 18px;
-    color: white;
-    text-align: center;
-    width: 80%;
-    margin-left: auto;
+.sidebar-logo {
+    height: 80px;
+    width: 100px; 
     margin-right: auto;
-    padding-bottom: 20px;
+    margin-left: 0%;
+}
+
+.background1, .background2 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.background1 {
+    background-image: url('photo/homepage-background.jpg');
+    padding-top: 100px;
+    min-height: 100vh;
+}
+
+.background2 {
+    background-image: url('photo/homepage-background2.jpg');
+    padding: 50px 0;
+    min-height: 100vh;
+}
+
+.title {
+    font-size: 40px;
+    color : white;
+    margin-right: 75%;
+    margin-top: 80px;
+}
+
+.message {
+    width: 80%;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-left: 5%;
+    margin-top: 50px;
+    color : white;
+    text-align : left;
+    margin-bottom: 3%;
+}
+
+.video-and-text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 5%;
 }
 
 .services-grid {
@@ -128,21 +146,38 @@ main, footer, header {
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
-
-.service-title {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.service-text {
-    font-weight: bold;
-    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .service-item img {
     width: 80%;
     height: 80%;
     object-fit: cover;
+}
+
+.service-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-container {
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 50%;
+    color: white;
+    margin-right :15%;
+    margin-bottom:3%;
+}
+
+.service-container h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.service-container p {
+    font-size: 18px;
+    line-height: 1.5;
 }
