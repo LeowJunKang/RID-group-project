@@ -47,6 +47,24 @@
                         timestamp: serverTimestamp()
                     });
 
+                    const templateParams = {
+                        name: name,
+                        email: email,
+                        phone: phone,
+                        message: message
+                    };
+
+                    emailjs.send('service_325n035', 'template_wudafkj', templateParams)
+                        .then(function(response) {
+                            console.log('Email sent successfully:', response.status);
+                            alertBox.textContent = "Message Sent!";
+                            alertBox.className = "success";
+                        }, function(error) {
+                            console.error('Error sending email:', error);
+                            alertBox.textContent = "Message sent but email could not be delivered!";
+                            alertBox.className = "error";
+                        });
+
                     alertBox.textContent = "Message Sent!";
                     alertBox.className = "success";
                     alertBox.style.display = 'block';
@@ -69,6 +87,14 @@
                 }
             });
         });
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "xgyqLWd4tx9CFQCDB",
+            });
+        })();
     </script>
 </head>
 <body>
@@ -107,7 +133,6 @@
                 <a href="https://www.facebook.com/profile.php?id=61566751215324" class="fa fa-facebook" target="_blank" alt="Facebook"></a>
                 <a href="https://instagram.com/lttcstudio" class="fa fa-instagram" target="_blank" alt="Instagram"></a>
                 <a href="https://linkedin.com/in/lttc-studio-943445331" class="fa fa-linkedin" target="_blank" alt="LinkedIn"></a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=procode547@gmail.com" class="fa fa-google" target="_blank" alt="Email Me"></a>
             </div>
         </div>
     </main>
