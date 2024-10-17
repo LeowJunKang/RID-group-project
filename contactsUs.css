@@ -202,6 +202,7 @@ button:active {
     background-image: linear-gradient(to right, #f8994c, #de3b84, #974ac4, #5d68e6);
     -webkit-background-clip: text;
     color: transparent;
+    user-select: none;
 }
 
 .social-icons {
