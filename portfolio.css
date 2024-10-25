@@ -167,6 +167,38 @@ main {
     color: #c9eef1;
 }
 
+/* Styling for the button */
+.open-modal-btn {
+    background-color: #7492b3;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+.open-modal-btn:hover {
+    background-color: #29e2ef;
+}
+
+/* Close button inside the modal */
+.close-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal-btn:hover {
+    color: #ff0000;
+}
+
 /* Modal (popup) styling */
 .modal {
     display: none; /* Hidden by default */
@@ -198,18 +230,25 @@ main {
     max-width: 100%; /* Responsive image */
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px; /* Rounded corners for the image */
+    border: 1px solid #888; /* Gray border */
 }
 
 .modal-content h4 {
     margin-bottom: 15px; /* Spacing below the heading */
     font-size: 24px; /* Font size for the heading */
-    color: #333; /* Dark color for the heading */
+    color: #bfedf5; /* Dark color for the heading */
 }
 
 .modal-content p {
     font-size: 16px; /* Font size for the text */
-    color: #555; /* Medium gray for the text */
+    color: #a5d2da; /* Medium gray for the text */
 }
+
+.modal-content video {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
 
 /* Media Queries */
 @media (max-width: 768px) {
