@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 /* Uncomment if you want background image in body */
@@ -11,10 +11,10 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-image: url('put your image');
+    /*background-image: url('put your image');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
     text-align: center;
 }
 
@@ -72,6 +72,7 @@ main {
     margin: 0; /* Remove any margins that could be adding space around the section */
     width: 100vw; /* Ensure the section takes up the full width of the viewport */
     box-sizing: border-box; /* Make sure padding is included within the element's width */
+    min-height: 50vh; /* Ensure it covers the full viewport height */
 }
 
 /* Dark overlay for better readability */
@@ -106,6 +107,7 @@ main {
     padding: 50px 20px;
     text-align: center;
     background-color: #171616;
+    width: 100vw;
 }
 
 #portfolio h2 {
@@ -124,7 +126,8 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 50px;
+    padding: 100px 0; /* Adjust padding for top and bottom as needed */
+    position: relative;
 }
 
 .project {
@@ -136,7 +139,14 @@ main {
     border-radius: 10px;
     box-shadow: 0 4px 8px #ffffff66;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Initially translate 50px downwards */
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Smooth transition */
+}
+
+.project.slide-in {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Slide back to its original position */
 }
 
 .project:hover {
