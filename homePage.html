@@ -5,92 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="homePage.css">
-</header>
+</head>
 <body>
-    <div class = "background1">
+    <div class="background1">
         <nav class="sidebar">
             <img src="photo/logo.png" alt="Logo" class="sidebar-logo">
-            <a href="homePage.html" >Home</a>
+            <a href="homePage.html">Home</a>
             <a href="aboutUs.html">About Us</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="contactsUs.html">Contact</a>
         </nav>
-            <div class = "title">Introduction</div>
-            <div class="message">
-                <div>
-                    Our team, composed of passionate and skilled professionals in the field of Computer Science, 
-                    specializes in delivering innovative software and web solutions tailored to your needs. 
-                    From custom software development that optimizes business operations to website design and development that enhances your online presence, 
-                    we ensure that our solutions are efficient and user-friendly. We also excel in mobile app development, 
-                    creating high-performance applications for Android and iOS, 
-                    and offer cloud solutions and integration to help businesses scale and streamline their IT infrastructure. 
-                    With a deep understanding of technology, we strive to meet the evolving demands of both businesses and individuals.
-                </div>
-            </div> 
-
-            <div class="video-and-text-container">
-                <video controls width="400">
-                    <source src="video/homepage-video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                
-                <div class="service-container">
-                    <h3 style="color:gold">Why choose our service?</h3>
-                    <p>
-                        Our team provides custom software solutions that streamline your operations, responsive website designs that boost your online presence, mobile apps that meet your business needs, and scalable cloud solutions that optimize your IT infrastructure.
-                    </p>
-                </div>
+        <main>
+            <div class="container">
+                <h1>Welcome to <span style="color: black;">LTTC STUDIO</span></h1>
+                <p>We are a team of Computer Science students from INTI International University.</p>
+                <a href="#introduction" id="scrollDown">
+                    <img src="photo/Learn more.png" alt="Scroll Down" class="scroll-image">
+                </a>
             </div>
+        </main>
     </div>
-    <div class = "background2">
-        <h1 id="services-section" class = "service">Our Services</h1>
-        <div class="services-grid">
-            <div class="service-item">
-                <h2>Custom Software Development</h2>
-                <p>We build customized software solutions that are designed to optimize your business processes and improve efficiency.</p>
-                <img src="photo/homepage-software.jpg" alt="Custom Software Development">
+    
+    <div class="background2" id="introduction">
+        <div class="title fade-in" style="color: gold">Introduction</div>
+        <div class="message fade-in">
+            <div>
+                Our team, composed of computer science students, has successfully completed numerous projects during our time at university. We consistently collaborate and support one another, ensuring that we work together effectively to achieve high-quality results in all our endeavors.
             </div>
-            <div class="service-item">
-                <h2>Website Design and Development</h2>
-                <p>Our team creates visually appealing, responsive, and user-friendly websites that enhance your online presence.</p>
-                <img src="photo/homepage-web.jpg" alt="Website Design and Development">
-            </div>
-            <div class="service-item">
-                <h2>Mobile App Development</h2>
-                <p>We develop high-performance mobile applications for Android and iOS platforms to meet your business and customer needs.</p>
-                <img src="photo/homepage-mobile.png" alt="Mobile App Development">
-            </div>
-            <div class="service-item">
-                <h2>Cloud Solutions and Integration</h2>
-                <p>We provide scalable cloud solutions and seamless integrations to improve your IT infrastructure and reduce costs.</p>
-                <img src="photo/homepage-cloud.jpg" alt="Cloud Solutions and Integration">
+        </div>
+    
+        <div class="video-and-text-container fade-in">
+            <video autoplay muted loop width="400">
+                <source src="video/homepage-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="service-container fade-in">
+                <h3 style="color: gold">Team Overview</h3>
+                <p>
+                    Our group is dedicated to excellence in computer science projects, leveraging each member's unique strengths and expertise. Through effective communication and teamwork, we foster a collaborative environment that enhances our learning experience and drives innovation in our work.
+                </p>
             </div>
         </div>
     </div>
-        <script>
-            const currentPage = window.location.pathname.split('/').pop();
-            const links = document.querySelectorAll('.sidebar a');
-            links.forEach(link => {
-                if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('active');
+    <div class="background3">
+        <div class="title2 fade-in" style="color: gold">Our Group Mission</div>
+        <div class="message2 fade-in">
+            <div>
+                Our group mission is to leverage our collective skills and knowledge in computer science to tackle real-world challenges while fostering a spirit of collaboration and innovation. We are committed to supporting one another in our academic journey, continuously learning and growing through each project we undertake. By combining our diverse strengths, we aim to create impactful solutions that contribute positively to our university community and beyond.
+            </div>
+            <img class = "image" src="photo/homepage-image.gif" >
+        </div>
+    </div>
+
+    <script>
+        const currentPage = window.location.pathname.split('/').pop();
+        const links = document.querySelectorAll('.sidebar a');
+        links.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
                 }
             });
+        }, {
+            threshold: 0.1
+        });
 
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    } else {
-                        entry.target.classList.remove('visible');
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
+        document.querySelectorAll('.fade-in').forEach(item => {
+            observer.observe(item);
+        });
 
-            document.querySelectorAll('.service-item').forEach(item => {
-                observer.observe(item);
+        document.getElementById('scrollDown').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('introduction').scrollIntoView({
+                behavior: 'smooth'
             });
-        </script>  
+        });
+    </script>
 </body>
 </html>
