@@ -64,7 +64,7 @@ main {
 /* Section for the impactful statement */
 .statement-section {
     position: relative;
-    background-image: url("photo/background-portfolio-statement.jpg"); /* Ensure the correct path to your image */
+    background-image: url("photo/portfolio-background-statement.jpg"); /* Ensure the correct path to your image */
     background-size: cover; /* Ensure the image covers the entire section */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
@@ -117,7 +117,7 @@ main {
 }
 
 .projects {
-    background-image: url("photo/background-portfolio-project.png");
+    background-image: url("photo/portfolio-background-project.png");
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
