@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="homePage.css">
+</head>
+<body>
+    <div class="background1">
+        <nav class="sidebar">
+            <img src="photo/logo.png" alt="Logo" class="sidebar-logo">
+            <a href="index.html">Home</a>
+            <a href="aboutUs.html">About Us</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contactsUs.html">Contact</a>
+        </nav>
+        <main>
+            <div class="container">
+                <h1>Welcome to <span style="color: black;">LTTC STUDIO</span></h1>
+                <p>We are a team of Computer Science students from INTI International University.</p>
+                <a href="#introduction" id="scrollDown">
+                    <img src="photo/Learn more.png" alt="Scroll Down" class="scroll-image">
+                </a>
+            </div>
+        </main>
+    </div>
+    
+    <div class="background2" id="introduction">
+        <div class="title fade-in" style="color: gold">Introduction</div>
+        <div class="message fade-in">
+            <div>
+                Our team, composed of computer science students, has successfully completed numerous projects during our time at university. We consistently collaborate and support one another, ensuring that we work together effectively to achieve high-quality results in all our endeavors.
+            </div>
+        </div>
+    
+        <div class="video-and-text-container fade-in">
+            <video autoplay muted loop width="400">
+                <source src="video/homepage-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="service-container fade-in">
+                <h3 style="color: gold">Team Overview</h3>
+                <p>
+                    Our group is dedicated to excellence in computer science projects, leveraging each member's unique strengths and expertise. Through effective communication and teamwork, we foster a collaborative environment that enhances our learning experience and drives innovation in our work.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="background3">
+        <div class="title2 fade-in" style="color: gold">Our Group Mission</div>
+        <div class="message2 fade-in">
+            <div>
+                Our group mission is to leverage our collective skills and knowledge in computer science to tackle real-world challenges while fostering a spirit of collaboration and innovation. We are committed to supporting one another in our academic journey, continuously learning and growing through each project we undertake. By combining our diverse strengths, we aim to create impactful solutions that contribute positively to our university community and beyond.
+            </div>
+            <img class = "image" src="photo/homepage-image.gif" >
+        </div>
+    </div>
 
+    <script>
+        const currentPage = window.location.pathname.split('/').pop();
+        const links = document.querySelectorAll('.sidebar a');
+        links.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+        });
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                } else {
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.fade-in').forEach(item => {
+            observer.observe(item);
+        });
+
+        document.getElementById('scrollDown').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('introduction').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
