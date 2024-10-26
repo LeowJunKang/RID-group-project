@@ -23,7 +23,8 @@
     <section class="statement-section">
         <div class="statement-text">
             <h1>Empowering Ideas, Crafting Innovation.</h1>
-            <p>As students, we harness our creativity and knowledge to turn bold ideas into innovative projects, preparing ourselves to shape the future through passion and learning.</p>
+            <p>As students, we harness our creativity and knowledge to turn bold ideas into innovative projects, </p>
+            <p>preparing ourselves to shape the future through passion and learning.</p>
         </div>
     </section>
     </main>
@@ -34,62 +35,116 @@
         <div class="projects">
             <!-- Project 1 -->
             <div class="project" onclick="openModal(1)">
-                <img src="photo/sample-pictures.png" alt="Project 1">
-                <h3>Project 1: Inventory Management System</h3>
+                <img src="photo/portfolio-cpp.avif" alt="Project 1">
+                <h3>Structured Programming</h3>
             </div>
 
             <!-- Project 2 -->
             <div class="project" onclick="openModal(2)">
-                <img src="photo/sample-pictures.png" alt="Project 2">
-                <h3>Project 2: ERP System Setup</h3>
+                <img src="photo/portfolio-cisco.webp" alt="Project 2">
+                <h3>Networking</h3>
             </div>
 
             <!-- Project 3 -->
             <div class="project" onclick="openModal(3)">
-                <img src="photo/sample-pictures.png" alt="Project 3">
-                <h3>Project 3: E-commerce Platform</h3>
+                <img src="photo/portfolio-netbeans.jpg" alt="Project 3">
+                <h3>Object-Oriented Programming</h3>
             </div>
 
             <!-- Project 4 -->
             <div class="project" onclick="openModal(4)">
-                <img src="photo/sample-pictures.png" alt="Project 4">
-                <h3>Project 4: E-commerce Platform</h3>
+                <img src="photo/portfolio-visual.jpg" alt="Project 4">
+                <h3>Rapid Application Development</h3>
             </div>
         </div>
     </section>
 
-    
-
     <!-- Modal for Project Details -->
     <div id="modal1" class="modal" onclick="closeModal(1)">
         <div class="modal-content" onclick="event.stopPropagation();">
-            <h4>Project 1: Inventory Management System</h4>
-            <img src="photo/sample-pictures.png" alt="Project 1 Image">
-            <p>This project is an inventory management system for a sales company. It features inventory checks, stock recording, and purchasing functionalities.</p>
+            <img src="photo/portfolio-c++.png" alt="Project 1 Image">
+            <h4>Library Borrowing System</h4>
+            <p>This project is a Books Borrowing System for a School's Library. It allows library administrators login into the Library Borrowing System after register a new account to manage the whole system.</p>
+            <!-- Add video button to open the video modal -->
+            <button id="openVideoBtn1" class="open-modal-btn">Watch Video Demo</button>
+        </div>
+    </div>
+
+    <!-- Video modal for Project 1 -->
+    <div id="videoModal1" class="modal" onclick="closeModal('video1')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span id="closeVideoModal1" class="close-modal-btn">&times;</span>
+            <h4>Library Borrowing System Demo Video</h4>
+            <video controls width="100%">
+                <source src="video/homepage-video.mp4" type="video/mp4"> <!-- Add the path to your video file -->
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 
     <div id="modal2" class="modal" onclick="closeModal(2)">
         <div class="modal-content" onclick="event.stopPropagation();">
-            <h4>Project 2: ERP System Setup</h4>
             <img src="photo/sample-pictures.png" alt="Project 2 Image">
-            <p>This project involves setting up an ERP system for an organization, managing data such as item codes and integrating it with the company's processes.</p>
+            <h4>Project 1: Inventory Management System</h4>
+            <p>This project is an inventory management system for a sales company. It features inventory checks, stock recording, and purchasing functionalities.</p>
+            <!-- Add video button to open the video modal -->
+            <button id="openVideoBtn2" class="open-modal-btn">Watch Video Demo</button>
+        </div>
+    </div>
+
+    <!-- Video modal for Project 2 -->
+    <div id="videoModal2" class="modal" onclick="closeModal('video2')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span id="closeVideoModal2" class="close-modal-btn">&times;</span>
+            <h4>Library Borrowing System Demo Video</h4>
+            <video controls width="100%">
+                <source src="demo-video.mp4" type="video/mp4"> <!-- Add the path to your video file -->
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 
     <div id="modal3" class="modal" onclick="closeModal(3)">
         <div class="modal-content" onclick="event.stopPropagation();">
-            <h4>Project 3: E-commerce Platform</h4>
             <img src="photo/sample-pictures.png" alt="Project 3 Image">
-            <p>This project focuses on creating an e-commerce platform with features for product listings, order management, and payment integration.</p>
+            <h4>Project 1: Inventory Management System</h4>
+            <p>This project is an inventory management system for a sales company. It features inventory checks, stock recording, and purchasing functionalities.</p>
+            <!-- Add video button to open the video modal -->
+            <button id="openVideoBtn3" class="open-modal-btn">Watch Video Demo</button>
+        </div>
+    </div>
+
+    <!-- Video modal for Project 3 -->
+    <div id="videoModal3" class="modal" onclick="closeModal('video3')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span id="closeVideoModal3" class="close-modal-btn">&times;</span>
+            <h4>Library Borrowing System Demo Video</h4>
+            <video controls width="100%">
+                <source src="demo-video.mp4" type="video/mp4"> <!-- Add the path to your video file -->
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 
     <div id="modal4" class="modal" onclick="closeModal(4)">
         <div class="modal-content" onclick="event.stopPropagation();">
-            <h4>Project 4</h4>
             <img src="photo/sample-pictures.png" alt="Project 4 Image">
-            <p>I have done the python to create the FYP project</p>
+            <h4>Project 1: Inventory Management System</h4>
+            <p>This project is an inventory management system for a sales company. It features inventory checks, stock recording, and purchasing functionalities.</p>
+            <!-- Add video button to open the video modal -->
+            <button id="openVideoBtn4" class="open-modal-btn">Watch Video Demo</button>
+        </div>
+    </div>
+
+    <!-- Video modal for Project 4 -->
+    <div id="videoModal4" class="modal" onclick="closeModal('video4')">
+        <div class="modal-content" onclick="event.stopPropagation();">
+            <span id="closeVideoModal4" class="close-modal-btn">&times;</span>
+            <h4>Library Borrowing System Demo Video</h4>
+            <video controls width="100%">
+                <source src="demo-video.mp4" type="video/mp4"> <!-- Add the path to your video file -->
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 
@@ -112,6 +167,114 @@
             document.getElementById('modal' + modalId).style.display = 'none';
         }
 
+        // Create an IntersectionObserver
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add the 'slide-in' class when the element is in view
+                    entry.target.classList.add('slide-in');
+                }
+            });
+        });
+
+        // Target each project item for the observer
+            document.querySelectorAll('.project').forEach(project => {
+            observer.observe(project);
+        });
+    </script>
+
+    <script>
+        // Modal 1
+        // Get the video button and modal elements for Project 1
+        const openVideoBtn1 = document.getElementById('openVideoBtn1');
+        const videoModal1 = document.getElementById('videoModal1');
+        const closeVideoModal1 = document.getElementById('closeVideoModal1');
+
+        // Open the video modal when the button is clicked
+        openVideoBtn1.addEventListener('click', () => {
+            videoModal1.style.display = 'flex';
+        });
+
+        // Close the video modal when the close button is clicked
+        closeVideoModal1.addEventListener('click', () => {
+            videoModal1.style.display = 'none';
+        });
+
+        // Optionally, close the modal when the user clicks outside the video content
+        window.addEventListener('click', (e) => {
+            if (e.target === videoModal1) {
+                videoModal1.style.display = 'none';
+            }
+        });
+
+        // Modal 2
+        // Get the video button and modal elements for Project 2
+        const openVideoBtn2 = document.getElementById('openVideoBtn2');
+        const videoModal2 = document.getElementById('videoModal2');
+        const closeVideoModal2 = document.getElementById('closeVideoModal2');
+
+        // Open the video modal when the button is clicked
+        openVideoBtn2.addEventListener('click', () => {
+            videoModal2.style.display = 'flex';
+        });
+
+        // Close the video modal when the close button is clicked
+        closeVideoModal2.addEventListener('click', () => {
+            videoModal2.style.display = 'none';
+        });
+
+        // Optionally, close the modal when the user clicks outside the video content
+        window.addEventListener('click', (e) => {
+            if (e.target === videoModal2) {
+                videoModal2.style.display = 'none';
+            }
+        });
+
+        // Modal 3
+        // Get the video button and modal elements for Project 3
+        const openVideoBtn3 = document.getElementById('openVideoBtn3');
+        const videoModal3 = document.getElementById('videoModal3');
+        const closeVideoModal3 = document.getElementById('closeVideoModal3');
+
+        // Open the video modal when the button is clicked
+        openVideoBtn3.addEventListener('click', () => {
+            videoModal3.style.display = 'flex';
+        });
+
+        // Close the video modal when the close button is clicked
+        closeVideoModal3.addEventListener('click', () => {
+            videoModal3.style.display = 'none';
+        });
+
+        // Optionally, close the modal when the user clicks outside the video content
+        window.addEventListener('click', (e) => {
+            if (e.target === videoModal3) {
+                videoModal3.style.display = 'none';
+            }
+        });
+
+        // Modal 4
+        // Get the video button and modal elements for Project 1
+        const openVideoBtn4 = document.getElementById('openVideoBtn4');
+        const videoModal4 = document.getElementById('videoModal4');
+        const closeVideoModal4 = document.getElementById('closeVideoModal4');
+
+        // Open the video modal when the button is clicked
+        openVideoBtn4.addEventListener('click', () => {
+            videoModal4.style.display = 'flex';
+        });
+
+        // Close the video modal when the close button is clicked
+        closeVideoModal4.addEventListener('click', () => {
+            videoModal4.style.display = 'none';
+        });
+
+        // Optionally, close the modal when the user clicks outside the video content
+        window.addEventListener('click', (e) => {
+            if (e.target === videoModal4) {
+                videoModal4.style.display = 'none';
+            }
+        });
     </script>
         
     <script>

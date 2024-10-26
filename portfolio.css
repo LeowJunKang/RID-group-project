@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 /* Uncomment if you want background image in body */
@@ -11,10 +11,10 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    background-image: url('put your image');
+    /*background-image: url('put your image');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;*/
     text-align: center;
 }
 
@@ -64,7 +64,7 @@ main {
 /* Section for the impactful statement */
 .statement-section {
     position: relative;
-    background-image: url("photo/background-portfolio-statement.jpg"); /* Ensure the correct path to your image */
+    background-image: url("photo/portfolio-background-statement.jpg"); /* Ensure the correct path to your image */
     background-size: cover; /* Ensure the image covers the entire section */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
@@ -72,6 +72,7 @@ main {
     margin: 0; /* Remove any margins that could be adding space around the section */
     width: 100vw; /* Ensure the section takes up the full width of the viewport */
     box-sizing: border-box; /* Make sure padding is included within the element's width */
+    min-height: 50vh; /* Ensure it covers the full viewport height */
 }
 
 /* Dark overlay for better readability */
@@ -106,6 +107,7 @@ main {
     padding: 50px 20px;
     text-align: center;
     background-color: #171616;
+    width: 100vw;
 }
 
 #portfolio h2 {
@@ -115,7 +117,7 @@ main {
 }
 
 .projects {
-    background-image: url("photo/background-portfolio-project.png");
+    background-image: url("photo/portfolio-background-project.png");
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
@@ -124,7 +126,8 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 50px;
+    padding: 100px 0; /* Adjust padding for top and bottom as needed */
+    position: relative;
 }
 
 .project {
@@ -136,7 +139,14 @@ main {
     border-radius: 10px;
     box-shadow: 0 4px 8px #ffffff66;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Initially translate 50px downwards */
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Smooth transition */
+}
+
+.project.slide-in {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Slide back to its original position */
 }
 
 .project:hover {
@@ -155,6 +165,38 @@ main {
     margin: 15px 0 10px 0;
     font-size: 1.5rem;
     color: #c9eef1;
+}
+
+/* Styling for the button */
+.open-modal-btn {
+    background-color: #7492b3;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+.open-modal-btn:hover {
+    background-color: #29e2ef;
+}
+
+/* Close button inside the modal */
+.close-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal-btn:hover {
+    color: #ff0000;
 }
 
 /* Modal (popup) styling */
@@ -188,18 +230,25 @@ main {
     max-width: 100%; /* Responsive image */
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px; /* Rounded corners for the image */
+    border: 1px solid #888; /* Gray border */
 }
 
 .modal-content h4 {
     margin-bottom: 15px; /* Spacing below the heading */
     font-size: 24px; /* Font size for the heading */
-    color: #333; /* Dark color for the heading */
+    color: #bfedf5; /* Dark color for the heading */
 }
 
 .modal-content p {
     font-size: 16px; /* Font size for the text */
-    color: #555; /* Medium gray for the text */
+    color: #a5d2da; /* Medium gray for the text */
 }
+
+.modal-content video {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
 
 /* Media Queries */
 @media (max-width: 768px) {
