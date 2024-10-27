@@ -140,6 +140,13 @@ p {
     transform: translateY(-10px); 
 }
 
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: rgb(229, 206, 169);
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     .team-row {
         flex-direction: column;
