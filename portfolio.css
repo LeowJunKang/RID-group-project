@@ -11,10 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    /*background-image: url('put your image');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;*/
+    padding: 0;
     text-align: center;
 }
 
@@ -247,6 +244,36 @@ main {
 .modal-content video {
     max-width: 100%;
     border-radius: 10px;
+}
+
+/* Shared Background Container */
+.shared-background {
+    background-image: url("photo/portfolio-background-statement.jpg"); /* Ensure the correct path to your image */
+    background-size: cover;
+    background-position: center;
+    width: 100vw; /* Full viewport width */
+    padding-top: 20px; /* Optional: to create spacing from above */
+}
+
+/* Center the text below the modals */
+.coming-soon {
+    text-align: center;
+    font-size: 24px;
+    color: rgb(229, 206, 169); /* Adjust color to match your theme */
+    padding: 20px 0; /* Adds vertical padding to the text */
+    font-weight: bold;
+    width: 100%; /* Ensure the section takes up the full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: rgb(229, 206, 169); /* Match the color with Coming Soon text */
+    width: 100%; /* Ensure full width */
 }
 
 
