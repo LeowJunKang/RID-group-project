@@ -1,10 +1,9 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-sizing: border-box;
 }
 
-/* Uncomment if you want background image in body */
 body {
     font-family: Arial, sans-serif;
     min-height: 100vh;
@@ -50,29 +49,34 @@ body {
 }
 
 .sidebar a.active {
-    color: #ffcc00; /* Change to your desired color for the active link */
+    color: #ffcc00;
     border-bottom: 4px solid #ffcc00;
 }
 
-main {
-    margin-top: 80px; /* Adjust this to create space below the sidebar */
+.sidebar-logo {
+    height: 80px;
+    width: 100px; 
+    margin-right: auto;
+    margin-left: 0%;
 }
 
-/* Section for the impactful statement */
+main {
+    margin-top: 80px;
+}
+
 .statement-section {
     position: relative;
-    background-image: url("photo/portfolio-background-statement.jpg"); /* Ensure the correct path to your image */
-    background-size: cover; /* Ensure the image covers the entire section */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    padding: 100px 0; /* Adjust padding for top and bottom as needed */
-    margin: 0; /* Remove any margins that could be adding space around the section */
-    width: 100vw; /* Ensure the section takes up the full width of the viewport */
-    box-sizing: border-box; /* Make sure padding is included within the element's width */
-    min-height: 50vh; /* Ensure it covers the full viewport height */
+    background-image: url("photo/portfolio-background-statement.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    margin: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    min-height: 50vh;
 }
 
-/* Dark overlay for better readability */
 .statement-section::before {
     content: '';
     position: absolute;
@@ -83,7 +87,6 @@ main {
     z-index: 1;
 }
 
-/* Text content */
 .statement-text {
     position: relative;
     z-index: 2;
@@ -123,7 +126,7 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 100px 0; /* Adjust padding for top and bottom as needed */
+    padding: 100px 0;
     position: relative;
 }
 
@@ -136,14 +139,14 @@ main {
     border-radius: 10px;
     box-shadow: 0 4px 8px #ffffff66;
     cursor: pointer;
-    opacity: 0; /* Initially hidden */
-    transform: translateY(50px); /* Initially translate 50px downwards */
-    transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s ease-in-out, transform 0.6s ease-in-out; /* Smooth transition */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.3s, box-shadow 0.3s, opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
 
 .project.slide-in {
-    opacity: 1; /* Fully visible */
-    transform: translateY(0); /* Slide back to its original position */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project:hover {
@@ -164,7 +167,6 @@ main {
     color: #c9eef1;
 }
 
-/* Styling for the button */
 .open-modal-btn {
     background-color: #7492b3;
     color: black;
@@ -180,7 +182,6 @@ main {
     background-color: #29e2ef;
 }
 
-/* Close button inside the modal */
 .close-modal-btn {
     position: absolute;
     top: 10px;
@@ -196,49 +197,48 @@ main {
     color: #ff0000;
 }
 
-/* Modal (popup) styling */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 9999; /* High z-index to stay on top */
+    display: none;
+    position: fixed;
+    z-index: 9999;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.8); /* Black with opacity */
-    justify-content: center; /* Center modal content */
-    align-items: center; /* Center modal content */
-    display: flex; /* Use flexbox to center the modal */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .modal-content {
-    background-color: #000; /* black background */
-    padding: 20px; /* Padding inside the modal */
-    border: 1px solid #888; /* Gray border */
-    border-radius: 10px; /* Rounded corners */
-    width: 90%; /* Responsive width */
-    max-width: 500px; /* Maximum width */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
-    text-align: center; /* Center text */
+    background-color: #000;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 .modal-content img {
-    max-width: 100%; /* Responsive image */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Rounded corners for the image */
-    border: 1px solid #888; /* Gray border */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #888;
 }
 
 .modal-content h4 {
-    margin-bottom: 15px; /* Spacing below the heading */
-    font-size: 24px; /* Font size for the heading */
-    color: #bfedf5; /* Dark color for the heading */
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #bfedf5;
 }
 
 .modal-content p {
-    font-size: 16px; /* Font size for the text */
-    color: #a5d2da; /* Medium gray for the text */
+    font-size: 16px;
+    color: #a5d2da;
 }
 
 .modal-content video {
@@ -246,38 +246,33 @@ main {
     border-radius: 10px;
 }
 
-/* Shared Background Container */
 .shared-background {
-    background-image: url("photo/portfolio-background-statement.jpg"); /* Ensure the correct path to your image */
+    background-image: url("photo/portfolio-background-statement.jpg");
     background-size: cover;
     background-position: center;
-    width: 100vw; /* Full viewport width */
-    padding-top: 20px; /* Optional: to create spacing from above */
+    width: 100vw;
+    padding-top: 20px;
 }
 
-/* Center the text below the modals */
 .coming-soon {
     text-align: center;
     font-size: 24px;
-    color: rgb(229, 206, 169); /* Adjust color to match your theme */
-    padding: 20px 0; /* Adds vertical padding to the text */
+    color: rgb(229, 206, 169);
+    padding: 20px 0;
     font-weight: bold;
-    width: 100%; /* Ensure the section takes up the full width */
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Footer */
 .footer {
     text-align: center;
     padding: 20px;
-    color: rgb(229, 206, 169); /* Match the color with Coming Soon text */
-    width: 100%; /* Ensure full width */
+    color: rgb(229, 206, 169);
+    width: 100%;
 }
 
-
-/* Media Queries */
 @media (max-width: 768px) {
     .project {
         width: 80%;
@@ -286,11 +281,24 @@ main {
     .modal-content {
         width: 90%;
     }
-}
 
-.sidebar-logo {
-    height: 80px;
-    width: 100px; 
-    margin-right: auto;
-    margin-left: 0%;
+    .sidebar {
+        height: 60px;
+        padding: 0 10px;
+    }
+
+    .sidebar a {
+        padding: 15px 10px;
+        line-height: 20px;
+        font-size: 12px;
+    }
+
+    .sidebar-logo {
+        height: 60px;
+        width: 80px;
+    }
+
+    main {
+        margin-top: 60px;
+    }
 }
