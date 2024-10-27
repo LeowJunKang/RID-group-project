@@ -269,6 +269,13 @@ button:active {
     color: #ffcc00;
 }
 
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: rgb(229, 206, 169);
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     body {
         font-size: 14px;
