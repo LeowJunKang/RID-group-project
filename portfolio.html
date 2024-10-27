@@ -19,7 +19,6 @@
     </header>
 
     <main>
-        <!-- Statement Section -->
     <section class="statement-section">
         <div class="statement-text">
             <h1>Empowering Ideas, Crafting Innovation.</h1>
@@ -29,29 +28,25 @@
     </section>
     </main>
 
-    <!-- Portfolio Section -->
     <section id="portfolio">
         <h2>Our Projects</h2>
         <div class="projects">
-            <!-- Project 1 -->
+
             <div class="project" onclick="openModal(1)">
                 <img src="photo/portfolio-cpp.avif" alt="Project 1">
                 <h3>Structured Programming</h3>
             </div>
 
-            <!-- Project 2 -->
             <div class="project" onclick="openModal(2)">
                 <img src="photo/portfolio-cisco.webp" alt="Project 2">
                 <h3>Networking</h3>
             </div>
 
-            <!-- Project 3 -->
             <div class="project" onclick="openModal(3)">
                 <img src="photo/portfolio-netbeans.jpg" alt="Project 3">
                 <h3>Object-Oriented Programming</h3>
             </div>
 
-            <!-- Project 4 -->
             <div class="project" onclick="openModal(4)">
                 <img src="photo/portfolio-visual.jpg" alt="Project 4">
                 <h3>Rapid Application Development</h3>
@@ -59,18 +54,17 @@
         </div>
     </section>
 
-    <!-- Modal for Project Details -->
     <div id="modal1" class="modal" onclick="closeModal(1)">
         <div class="modal-content" onclick="event.stopPropagation();">
             <img src="photo/portfolio-library-borrow-system.png" alt="Project 1 Image">
             <h4>Library Borrowing System</h4>
             <p>This project is a Books Borrowing System for a School's Library. It allows library administrators login into the Library Borrowing System after register a new account to manage the whole system.</p>
-            <!-- Add video button to open the video modal -->
+
             <button id="openVideoBtn1" class="open-modal-btn">Watch Video Demo</button>
         </div>
     </div>
 
-    <!-- Video modal for Project 1 -->
+
     <div id="videoModal1" class="modal" onclick="closeModal('video1')">
         <div class="modal-content" onclick="event.stopPropagation();">
             <span id="closeVideoModal1" class="close-modal-btn">&times;</span>
@@ -86,12 +80,11 @@
             <img src="photo/portfolio-print-company-network.png" alt="Project 2 Image">
             <h4>Printing Company Network</h4>
             <p>This project is designing a Network System for a Printing Company. It allows staffs in the company to efficiently share resources, such as printers and files, across various departments.</p>
-            <!-- Add video button to open the video modal -->
+
             <button id="openVideoBtn2" class="open-modal-btn">Watch Video Demo</button>
         </div>
     </div>
 
-    <!-- Video modal for Project 2 -->
     <div id="videoModal2" class="modal" onclick="closeModal('video2')">
         <div class="modal-content" onclick="event.stopPropagation();">
             <span id="closeVideoModal2" class="close-modal-btn">&times;</span>
@@ -107,12 +100,11 @@
             <img src="photo/portfolio-inventory-management-system.png" alt="Project 3 Image">
             <h4>Inventory Management System</h4>
             <p>This project is an Inventory Management System for a Retail Shop. It allows shop administrators and sales to login and manage their own branch. </p>
-            <!-- Add video button to open the video modal -->
+
             <button id="openVideoBtn3" class="open-modal-btn">Watch Video Demo</button>
         </div>
     </div>
 
-    <!-- Video modal for Project 3 -->
     <div id="videoModal3" class="modal" onclick="closeModal('video3')">
         <div class="modal-content" onclick="event.stopPropagation();">
             <span id="closeVideoModal3" class="close-modal-btn">&times;</span>
@@ -128,12 +120,12 @@
             <img src="photo/portfolio-professional-group-website.png" alt="Project 4 Image">
             <h4>Professional Group Portfolio Website</h4>
             <p>This project is Portfolio Websitr for us. It shows that our group members' skills and techniques on present a portfolio website.</p>
-            <!-- Add video button to open the video modal -->
+
             <button id="openVideoBtn4" class="open-modal-btn">Watch Video Demo</button>
         </div>
     </div>
 
-    <!-- Video modal for Project 4 -->
+
     <div id="videoModal4" class="modal" onclick="closeModal('video4')">
         <div class="modal-content" onclick="event.stopPropagation();">
             <span id="closeVideoModal4" class="close-modal-btn">&times;</span>
@@ -144,8 +136,6 @@
         </div>
     </div>
 
-    <!-- New section for the text -->
-     <!-- Shared Background Container -->
     <div class="shared-background">
         <div class="coming-soon">
             <h5>Coming Soon ......</h5>
@@ -157,126 +147,100 @@
 
     <script>
         window.onload = function() {
-            // Ensure all modals are hidden on page load
             const modals = document.querySelectorAll('.modal');
             modals.forEach(modal => {
                 modal.style.display = 'none';
             });
         };
 
-        // Open modal
         function openModal(modalId) {
             document.getElementById('modal' + modalId).style.display = 'flex';
         }
 
-        // Close modal when clicking outside modal content
         function closeModal(modalId) {
             document.getElementById('modal' + modalId).style.display = 'none';
         }
 
-        // Create an IntersectionObserver
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Add the 'slide-in' class when the element is in view
                     entry.target.classList.add('slide-in');
                 }
             });
         });
 
-        // Target each project item for the observer
             document.querySelectorAll('.project').forEach(project => {
             observer.observe(project);
         });
     </script>
 
     <script>
-        // Modal 1
-        // Get the video button and modal elements for Project 1
         const openVideoBtn1 = document.getElementById('openVideoBtn1');
         const videoModal1 = document.getElementById('videoModal1');
         const closeVideoModal1 = document.getElementById('closeVideoModal1');
 
-        // Open the video modal when the button is clicked
         openVideoBtn1.addEventListener('click', () => {
             videoModal1.style.display = 'flex';
         });
 
-        // Close the video modal when the close button is clicked
         closeVideoModal1.addEventListener('click', () => {
             videoModal1.style.display = 'none';
         });
 
-        // Optionally, close the modal when the user clicks outside the video content
         window.addEventListener('click', (e) => {
             if (e.target === videoModal1) {
                 videoModal1.style.display = 'none';
             }
         });
 
-        // Modal 2
-        // Get the video button and modal elements for Project 2
         const openVideoBtn2 = document.getElementById('openVideoBtn2');
         const videoModal2 = document.getElementById('videoModal2');
         const closeVideoModal2 = document.getElementById('closeVideoModal2');
 
-        // Open the video modal when the button is clicked
         openVideoBtn2.addEventListener('click', () => {
             videoModal2.style.display = 'flex';
         });
 
-        // Close the video modal when the close button is clicked
         closeVideoModal2.addEventListener('click', () => {
             videoModal2.style.display = 'none';
         });
 
-        // Optionally, close the modal when the user clicks outside the video content
         window.addEventListener('click', (e) => {
             if (e.target === videoModal2) {
                 videoModal2.style.display = 'none';
             }
         });
 
-        // Modal 3
-        // Get the video button and modal elements for Project 3
         const openVideoBtn3 = document.getElementById('openVideoBtn3');
         const videoModal3 = document.getElementById('videoModal3');
         const closeVideoModal3 = document.getElementById('closeVideoModal3');
 
-        // Open the video modal when the button is clicked
         openVideoBtn3.addEventListener('click', () => {
             videoModal3.style.display = 'flex';
         });
 
-        // Close the video modal when the close button is clicked
         closeVideoModal3.addEventListener('click', () => {
             videoModal3.style.display = 'none';
         });
 
-        // Optionally, close the modal when the user clicks outside the video content
         window.addEventListener('click', (e) => {
             if (e.target === videoModal3) {
                 videoModal3.style.display = 'none';
             }
         });
 
-        // Modal 4
-        // Get the video button and modal elements for Project 1
         const openVideoBtn4 = document.getElementById('openVideoBtn4');
         const videoModal4 = document.getElementById('videoModal4');
         const closeVideoModal4 = document.getElementById('closeVideoModal4');
 
-        // Open the video modal when the button is clicked
         openVideoBtn4.addEventListener('click', () => {
             videoModal4.style.display = 'flex';
         });
 
-        // Close the video modal when the close button is clicked
         closeVideoModal4.addEventListener('click', () => {
             videoModal4.style.display = 'none';
         });
 
-        // Optionally, close the modal when the user clicks outside the video content
         window.addEventListener('click', (e) => {
             if (e.target === videoModal4) {
                 videoModal4.style.display = 'none';
@@ -285,13 +249,10 @@
     </script>
         
     <script>
-        // Get the current page URL
         const currentPage = window.location.pathname.split('/').pop();
 
-        // Get all sidebar links
         const links = document.querySelectorAll('.sidebar a');
 
-        // Loop through links and add 'active' class to the current page link
         links.forEach(link => {
             if (link.getAttribute('href') === currentPage) {
                 link.classList.add('active');
